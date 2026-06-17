@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARKET INSIGHT JAPAN</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind 自定义黑金主题配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0a0a0a',
+                        'gold': '#d4af37',
+                        'gold-hover': '#f0c850',
+                        'card-bg': '#1a1a1a',
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            }
+            .gold-border {
+                border-bottom: 2px solid #d4af37;
+            }
+        }
+    </style>
+    <!-- 日文无衬线字体，日文渲染更美观 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-dark-bg text-white font-sans">
+    <!-- 顶部导航栏 -->
+    <nav class="bg-dark-bg border-b border-gray-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- LOGO -->
+                <div class="flex-shrink-0">
+                    <span class="text-gold font-bold text-lg tracking-wider">MARKET INSIGHT JAPAN</span>
+                </div>
+                
+                <!-- PC端导航菜单 -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" class="text-gold gold-border pb-1 text-sm font-medium">ホーム</a>
+                        <a href="#" class="text-gray-300 hover:text-gold transition-colors duration-200 text-sm font-medium">市場ニュース</a>
+                        <a href="#" class="text-gray-300 hover:text-gold transition-colors duration-200 text-sm font-medium">分析レポート</a>
+                        <a href="#" class="text-gray-300 hover:text-gold transition-colors duration-200 text-sm font-medium">学習コンテンツ</a>
+                        <a href="#" class="text-gray-300 hover:text-gold transition-colors duration-200 text-sm font-medium">私たちについて</a>
+                    </div>
+                </div>
+                
+                <!-- 右侧LINE按钮 -->
+                <div class="hidden md:block">
+                    <button class="bg-gold hover:bg-gold-hover text-dark-bg font-medium px-4 py-2 rounded text-sm flex items-center transition-colors duration-200">
+                        <i class="fa-brands fa-line mr-2"></i>
+                        LINEで受け取る
+                    </button>
+                </div>
+                
+                <!-- 移动端汉堡菜单按钮 -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-300 hover:text-gold">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首屏Hero区域 -->
+    <section class="relative h-[80vh] md:h-[70vh] flex items-center overflow-hidden">
+        <!-- 东京夜景背景图（匹配原图高楼夜景） -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="東京夜景ビル群" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark-bg to-transparent"></div>
+        </div>
+        
+        <!-- Hero文字内容 -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <span class="text-gold font-medium tracking-wider mb-4 block">MARKET INSIGHT JAPAN</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight text-shadow">
+                    日本市場の<br>最新動向を無料でチェック
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                    株式・為替・経済ニュースを<br>わかりやすく解説
+                </p>
+                <div class="gold-border w-20 mb-8"></div>
+                
+                <!-- 四大核心卖点 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-check text-gold mr-2"></i>
+                        <span>市場ニュース速報</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-check text-gold mr-2"></i>
+                        <span>初心者向け解説</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-check text-gold mr-2"></i>
+                        <span>専門家による分析</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fa-solid fa-check text-gold mr-2"></i>
+                        <span>無料レポート配布</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据统计板块 -->
+    <section class="py-16 bg-dark-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-gold">
+                データで見る Market Insight Japan
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 数据卡片1：登録ユーザー -->
+                <div class="bg-card-bg p-6 rounded-lg hover:bg-gray-900 transition-colors duration-300 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-dark-bg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-sync-alt text-gold text-2xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold mb-1">10,000+</div>
+                    <div class="text-sm text-gray-400">
+                        毎日更新<br>登録ユーザー
+                    </div>
+                </div>
+                <!-- 数据卡片2：分析レポート -->
+                <div class="bg-card-bg p-6 rounded-lg hover:bg-gray-900 transition-colors duration-300 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-dark-bg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-chart-line text-gold text-2xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold mb-1">500+</div>
+                    <div class="text-sm text-gray-400">分析レポート</div>
+                </div>
+                <!-- 数据卡片3：24時間更新 -->
+                <div class="bg-card-bg p-6 rounded-lg hover:bg-gray-900 transition-colors duration-300 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-dark-bg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-clock text-gold text-2xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold mb-1">24時間</div>
+                    <div class="text-sm text-gray-400">情報更新</div>
+                </div>
+                <!-- 数据卡片4：専門家チーム -->
+                <div class="bg-card-bg p-6 rounded-lg hover:bg-gray-900 transition-colors duration-300 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-dark-bg flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-users text-gold text-2xl"></i>
+                    </div>
+                    <div class="text-sm text-gray-400">
+                        専門家チーム<br>による分析
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 三大功能卡片区域 -->
+    <section class="py-16 bg-dark-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- カード1 市場ニュース速報｜K線チャート画像 -->
+                <div class="bg-card-bg rounded-lg overflow-hidden hover:shadow-lg hover:shadow-gold/10 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1642790106117-e829e14a7959?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="株価チャート" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-newspaper text-gold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">市場ニュース速報</h3>
+                        <p class="text-gray-400 text-sm">
+                            国内外の経済・市場ニュースを<br>いち早くお届けします
+                        </p>
+                    </div>
+                </div>
+                <!-- カード2 専門家による分析｜アナリスト会議画像 -->
+                <div class="bg-card-bg rounded-lg overflow-hidden hover:shadow-lg hover:shadow-gold/10 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1605792657637-8729f4712372?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="専門家分析会議" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-user-tie text-gold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">専門家による分析</h3>
+                        <p class="text-gray-400 text-sm">
+                            経験豊富なアナリストが<br>分かりやすく解説します
+                        </p>
+                    </div>
+                </div>
+                <!-- カード3 初心者向け解説｜PC投資学習画像 -->
+                <div class="bg-card-bg rounded-lg overflow-hidden hover:shadow-lg hover:shadow-gold/10 transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="初心者投資学習" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-graduation-cap text-gold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">初心者向け解説</h3>
+                        <p class="text-gray-400 text-sm">
+                            投資初心者の方にも理解しやすい<br>学習コンテンツを提供
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 無料レポート配布CTA区域 -->
+    <section class="py-16 bg-dark-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-card-bg rounded-xl p-8 md:p-0 md:grid md:grid-cols-2 overflow-hidden">
+                <!-- 左側レポート表紙画像 -->
+                <div class="relative h-64 md:h-auto">
+                    <img src="https://images.unsplash.com/photo-1606744824163-8fdb1748e1c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="市場分析レポート" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-card-bg to-transparent md:hidden"></div>
+                </div>
+                <!-- 右側説明文+LINEボタン -->
+                <div class="p-8 md:p-12 flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gold">
+                        無料マーケットレポート配布中
+                    </h2>
+                    <p class="text-gray-300 mb-8 text-lg">
+                        最新の市場分析レポートを<br>LINE追加後すぐに受け取れます
+                    </p>
+                    <button class="bg-gold hover:bg-gold-hover text-dark-bg font-bold px-8 py-3 rounded-lg text-lg flex items-center justify-center transition-colors duration-200 w-full md:w-auto">
+                        <i class="fa-brands fa-line mr-2 text-xl"></i>
+                        LINEで受け取る
+                        <i class="fa-solid fa-chevron-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター免責事項・コピーライト -->
+    <footer class="bg-dark-bg border-t border-gray-800 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <!-- 免責事項 -->
+                <div class="text-gray-400 text-sm mb-6 md:mb-0 max-w-2xl">
+                    <div class="flex items-start mb-2">
+                        <i class="fa-solid fa-shield-check text-gold mr-2 mt-1"></i>
+                        <p>
+                            本サイトは情報提供を目的としており、<br>
+                            特定の金融商品の勧誘を目的とするものではありません。<br>
+                            投資判断はご自身の責任において行ってください。
+                        </p>
+                    </div>
+                </div>
+                <!-- コピーライト -->
+                <div class="text-gray-500 text-sm">
+                    &copy; 2024 Market Insight Japan. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<div class="mt-4">
+    <p>個人情報保護方針：本サイトは個人情報の保護に努め、日本の個人情報保護法に基づき適切に管理します。</p>
+</div>
+    </p>
+                    </div>
+                </div>
+                <!-- コピーライト -->
+                <div class="text-gray-500 text-sm">
+                    &copy; 2024 Market Insight Japan. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
